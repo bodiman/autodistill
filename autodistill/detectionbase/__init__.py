@@ -1,1 +1,1 @@
-from autodistill.detection_base.detection_base_model import DetectionBaseModel
+from autodistill.detectionbase.detection_base_model import DetectionBaseModel
