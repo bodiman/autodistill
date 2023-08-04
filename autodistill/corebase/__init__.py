@@ -1,0 +1,1 @@
+from autodistill.corebase import ontology
