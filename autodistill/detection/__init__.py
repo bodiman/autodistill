@@ -1,7 +1,7 @@
 from autodistill.detectionbase import detection_ontology
 from autodistill.detectionbase import detection_base_model
 
-from autodistill.detectionbase.detection_base_model import DetectionBase
+from autodistill.detectionbase.detection_base_model import DetectionBaseModel
 from autodistill.detection.caption_ontology import CaptionOntology
 from autodistill.detectionbase.detection_ontology import DetectionOntology
 from autodistill.detection.detection_target_model import DetectionTargetModel
