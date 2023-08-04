@@ -1,4 +1,4 @@
-from autodistill.detection import detection_ontology
+from autodistill.detectionbase import detection_ontology
 from autodistill.detectionbase import detection_base_model
 
 from autodistill.detectionbase.detection_base_model import DetectionBase
