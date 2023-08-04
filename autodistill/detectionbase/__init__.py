@@ -1,1 +1,2 @@
+from autodistill.detectionbase.detection_ontology import DetectionOntology
 from autodistill.detectionbase.detection_base_model import DetectionBaseModel
