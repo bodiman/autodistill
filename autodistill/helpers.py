@@ -7,6 +7,7 @@ from PIL import Image
 
 
 def split_data(base_dir, split_ratio=0.8):
+    print(base_dir)
     images_dir = os.path.join(base_dir, "images")
     annotations_dir = os.path.join(base_dir, "annotations")
 
