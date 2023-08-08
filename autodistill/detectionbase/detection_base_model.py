@@ -21,7 +21,7 @@ class DetectionBaseModel(BaseModel):
         pass
 
     def label(
-        self, input_folder: str, extension: str = ".jpg", output_folder: str = None, verbose = False
+        self, input_folder: str, extension: str = ".jpg", output_folder: str = None, confidence = 0.5, verbose = False
     ) -> sv.DetectionDataset:
         if output_folder is None:
             output_folder = input_folder + "_labeled"
@@ -40,7 +40,7 @@ class DetectionBaseModel(BaseModel):
 
             f_path_short = os.path.basename(f_path)
             images_map[f_path_short] = image.copy()
-            detections = self.predict(f_path, verbose=verbose)
+            detections = self.predict(f_path, confidence=confidence, verbose=verbose)
             detections_map[f_path_short] = detections
 
         dataset = sv.DetectionDataset(
