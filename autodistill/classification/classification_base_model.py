@@ -35,8 +35,8 @@ class ClassificationBaseModel(BaseModel):
             output_folder = input_folder + "_labeled"
 
         os.makedirs(output_folder, exist_ok=True)
-        os.makedirs(output_folder + "/images")
-        os.makedirs(output_folder + "/annotations")
+        os.makedirs(output_folder + "/images", exist_ok=True)
+        os.makedirs(output_folder + "/annotations", exist_ok=True)
 
         images_map = {}
         detections_map = {}
