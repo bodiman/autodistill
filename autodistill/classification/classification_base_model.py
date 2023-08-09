@@ -14,7 +14,7 @@ from autodistill.helpers import split_data
 @dataclass 
 class ClassificationDataset(sv.ClassificationDataset):
     def __fspath__(self):
-        return "data.yaml"
+        return "dataset2"
 
 @dataclass
 class ClassificationBaseModel(BaseModel):
