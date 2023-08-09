@@ -13,9 +13,12 @@ from autodistill.helpers import split_data
 
 @dataclass 
 class ClassificationDataset(sv.ClassificationDataset):
-    pass
-    #def __fspath__(self):
-        #return "dataset2"
+    def __init__(self, classes, images, annotations, path):
+        super().__init__(self, classes, images, annotations)
+        self.path = path
+    
+    def __fspath__(self):
+        return self.path
 
 @dataclass
 class ClassificationBaseModel(BaseModel):
@@ -51,7 +54,7 @@ class ClassificationBaseModel(BaseModel):
             detections_map[f_path_short] = detections
 
         dataset = ClassificationDataset(
-            self.ontology.classes(), images_map, detections_map
+            self.ontology.classes(), images_map, detections_map, "dataset2"
         )
 
 
