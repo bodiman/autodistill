@@ -11,6 +11,9 @@ from autodistill.core import BaseModel
 from autodistill.detection import CaptionOntology
 from autodistill.helpers import split_data
 
+@dataclass ClassificationDataset(sv.ClassificationDataset):
+    def __fspath__(self):
+        return "data.yaml"
 
 @dataclass
 class ClassificationBaseModel(BaseModel):
@@ -22,7 +25,7 @@ class ClassificationBaseModel(BaseModel):
 
     def label(
         self, input_folder: str, extension: str = ".jpg", output_folder: str = None
-    ) -> sv.ClassificationDataset:
+    ) -> ClassificationDataset:
         if output_folder is None:
             output_folder = input_folder + "_labeled"
 
@@ -43,7 +46,7 @@ class ClassificationBaseModel(BaseModel):
             detections = self.predict(f_path)
             detections_map[f_path_short] = detections
 
-        dataset = sv.ClassificationDataset(
+        dataset = ClassificationDataset(
             self.ontology.classes(), images_map, detections_map
         )
 
