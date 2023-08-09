@@ -1,5 +1,5 @@
 import os
-import sv
+import supervision as sv
 import random
 import shutil
 
