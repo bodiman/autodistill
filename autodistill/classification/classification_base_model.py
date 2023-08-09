@@ -14,7 +14,7 @@ from autodistill.helpers import split_data
 @dataclass 
 class ClassificationDataset(sv.ClassificationDataset):
     def __init__(self, classes, images, annotations, path):
-        super().__init__(self, classes, images, annotations)
+        super().__init__(classes, images, annotations)
         self.path = path
     
     def __fspath__(self):
