@@ -51,6 +51,8 @@ class ClassificationBaseModel(BaseModel):
             self.ontology.classes(), images_map, detections_map
         )
 
+        print(os.listdir())
+
         train_cs, test_cs = split_data(dataset, split_ratio=0.7)
         test_cs, valid_cs = split_data(test_cs, split_ratio=0.5)
 
