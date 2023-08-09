@@ -11,7 +11,8 @@ from autodistill.core import BaseModel
 from autodistill.detection import CaptionOntology
 from autodistill.helpers import split_data
 
-@dataclass ClassificationDataset(sv.ClassificationDataset):
+@dataclass 
+class ClassificationDataset(sv.ClassificationDataset):
     def __fspath__(self):
         return "data.yaml"
 
