@@ -13,8 +13,9 @@ from autodistill.helpers import split_data
 
 @dataclass 
 class ClassificationDataset(sv.ClassificationDataset):
-    def __fspath__(self):
-        return "dataset2"
+    pass
+    #def __fspath__(self):
+        #return "dataset2"
 
 @dataclass
 class ClassificationBaseModel(BaseModel):
