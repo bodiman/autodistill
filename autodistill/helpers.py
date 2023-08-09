@@ -8,7 +8,7 @@ from PIL import Image
 
 
 def split_data(base_dir, split_ratio=0.8):
-    if isinstance(base_dir, sv.ClassificationDataset):
+    if isinstance(base_dir, str):
         images_dir = os.path.join(base_dir, "images")
     else:
         images_dir = base_dir
